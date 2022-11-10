@@ -1,10 +1,24 @@
 @mixin flex($aItems: stretch, $jContent: flex-start, $fDirection: row, $cGap: 0, $rGap: 0) {
   display: flex;
-  align-items: $aItems;
+
+  @if $fDirection ==column {
+    align-items: baseline;
+  }
+
+  @else {
+    align-items: $aItems;
+  }
+
   justify-content: $jContent;
   flex-direction: $fDirection;
-  column-gap: $cGap;
-  row-gap: $rGap;
+
+  @if $cGap >0 {
+    column-gap: #{$cGap}+px;
+  }
+
+  @if $rGap >0 {
+    row-gap: #{$rGap}+px;
+  }
 }
 
 @mixin font($fSize, $fWeight, $lHeight, $fTrans: none, $fColor: black) {

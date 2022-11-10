@@ -11,6 +11,10 @@ a {
     display: inline-block;
 }
 
+.qwerty {
+    display: none;
+}
+
 .btn {
     width: 100%;
     border-radius: 10px;
@@ -25,7 +29,7 @@ a {
     height: 100%;
 
     & .signup-content {
-        @include flex($cGap: 45px);
+        @include flex($cGap: 45);
         height: 100%;
 
         &__start {
@@ -71,7 +75,7 @@ a {
             padding: 40px;
             background-color: #FFFFFF;
             border-radius: 10px;
-            @include flex($fDirection: column, $rGap: 20px);
+            @include flex($fDirection: column, $rGap: 20);
 
             & input {
                 padding: 15px 32px;
@@ -79,6 +83,11 @@ a {
                 letter-spacing: .25px;
                 border-radius: 5px;
                 border: 1px solid #DEDEDE;
+
+                &:focus:invalid {
+                    background: url(./assets/icons/attention.svg) 350px center no-repeat;
+                    border: 2px solid #FF7979;
+                }
             }
 
             & input[type="text"] {
@@ -109,12 +118,6 @@ a {
                     color: #FF7979;
                 }
             }
-
-            .valid {
-                border: 2px solid #FF7979;
-                background: url(./assets/icons/attention.svg) 315px center no-repeat;
-            }
         }
     }
-
 }
