@@ -1,14 +1,6 @@
 @mixin flex($aItems: stretch, $jContent: flex-start, $fDirection: row, $cGap: 0, $rGap: 0) {
   display: flex;
-
-  @if $fDirection ==column {
-    align-items: baseline;
-  }
-
-  @else {
-    align-items: $aItems;
-  }
-
+  align-items: $aItems;
   justify-content: $jContent;
   flex-direction: $fDirection;
 
