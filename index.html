@@ -7,7 +7,7 @@
     <meta name="description" content="blah blah blah">
     <meta name="keywords" content="learn code, free trial, blah, blah, blah">
     <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles_min.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Sign up form</title>
 </head>
 <body>
@@ -24,10 +24,26 @@
             <div class="signup-content__endblock">
                 <a href="#" class="signup-content__tryit btn"><span>Try it free 7 days</span> then $20/mo. thereafter</a>
                 <form action="https://echo.htmlacademy.ru/" method="post" enctype="multipart/form-data">
-                    <input type="text" name="user__name" placeholder="First name" autofocus required>
-                    <input type="text" name="user__lastname" placeholder="Last name" required>
-                    <input type="email" name="user__email" placeholder="Email address" required aria-required="true">
-                    <input type="password" name="user__password" placeholder="Password" required aria-required="true">
+                    <label for="input">
+                        <input type="text" name="user__name" placeholder="First name" autofocus required autocomplete="off">
+                        <p class="error">That block cannot be empty</p>
+                    </label>
+
+                    <label for="input">
+                        <input type="text" name="user__lastname" placeholder="Last name" required autocomplete="off">
+                        <p class="error">That block cannot be empty</p>
+                    </label>
+                    
+                    <label for="input">
+                        <input type="email" name="user__email" placeholder="Email address" required aria-required="true" autocomplete="off">
+                        <p class="error">That block cannot be empty</p>
+                    </label>
+                    
+                    <label for="input">
+                        <input type="password" name="user__password" placeholder="Password" required aria-required="true">
+                        <p class="error">That block cannot be empty</p>
+                    </label>
+                   
                     <button class="signup-content__formbtn btn" type="submit">claim your free trial</button>
                     <p class="sigunup-content__btnnote">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
                     <!-- <input type="file" accept="image/*" capture="environment"> -->

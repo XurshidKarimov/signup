@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,500&display=swap');
 @import "nullstyle.scss";
 
+
+$error-color: #FF7979;
+
 body {
     font-family: 'Poppins', sans-serif;
     background: url(./assets/img/bg.jpg);
@@ -20,6 +23,15 @@ a {
     border-radius: 10px;
     padding: 15px 0px;
     transition: .3s linear;
+}
+
+p.error {
+    @include font(11, 500, 0, none, $error-color);
+    font-style: italic;
+    text-align: right;
+    transition: linear .2s;
+    padding-top: 9px;
+    display: none;
 }
 
 .container {
@@ -83,16 +95,28 @@ a {
                 letter-spacing: .25px;
                 border-radius: 5px;
                 border: 1px solid #DEDEDE;
+                width: 100%;
 
                 &:focus:invalid {
                     background: url(./assets/icons/attention.svg) 95% center no-repeat;
                     border: 2px solid #FF7979;
+
+                    &+.error {
+                        display: block;
+                    }
+                }
+
+                &:focus:valid {
+                    background: url(./assets/icons/Flat_tick_icon.svg.png) 95% center no-repeat;
+                    background-size: 24px 24px;
+                    border: 2px solid springgreen;
                 }
             }
 
             & input[type="text"] {
                 text-transform: capitalize;
             }
+
 
             & button {
                 @include font(15, 600, 26, uppercase, #FFFFFF);
@@ -109,7 +133,7 @@ a {
                 }
             }
 
-            & p {
+            & p.sigunup-content__btnnote {
                 @include font(11, 500, 26, none, #BAB7D4);
                 text-align: center;
 

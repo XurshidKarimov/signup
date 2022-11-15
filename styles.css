@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,500&display=swap");
 * {
   padding: 0;
@@ -15,8 +8,7 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :focus,
@@ -155,9 +147,20 @@ a {
   width: 100%;
   border-radius: 10px;
   padding: 15px 0px;
-  -webkit-transition: 0.3s linear;
-  -o-transition: 0.3s linear;
   transition: 0.3s linear;
+}
+
+p.error {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 0px;
+  text-transform: none;
+  color: #FF7979;
+  font-style: italic;
+  text-align: right;
+  transition: linear 0.2s;
+  padding-top: 9px;
+  display: none;
 }
 
 .container {
@@ -167,38 +170,19 @@ a {
   height: 100%;
 }
 .container .signup-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: row;
   -moz-column-gap: 45px;
-       -webkit-column-gap: 45px;
-          column-gap: 45px;
+       column-gap: 45px;
   height: 100%;
 }
 .container .signup-content__start {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 .container .signup-content__textblock {
   width: 525px;
@@ -219,22 +203,11 @@ a {
   color: #FFFFFF;
 }
 .container .signup-content__end {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-grow: 1;
 }
 .container .signup-content__tryit {
   font-size: 15px;
@@ -245,36 +218,23 @@ a {
   text-align: center;
   background-color: #5E54A4;
   margin-bottom: 24px;
-  -webkit-box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
-          box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
 }
 .container .signup-content__tryit span {
   font-weight: 500;
 }
 .container .signup-content__tryit:active {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: translateY(8px);
-      -ms-transform: translateY(8px);
-          transform: translateY(8px);
+  box-shadow: none;
+  transform: translateY(8px);
 }
 .container .signup-content form {
   padding: 40px;
   background-color: #FFFFFF;
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
   row-gap: 20px;
 }
 .container .signup-content form input {
@@ -287,10 +247,19 @@ a {
   letter-spacing: 0.25px;
   border-radius: 5px;
   border: 1px solid #DEDEDE;
+  width: 100%;
 }
 .container .signup-content form input:focus:invalid {
   background: url(./assets/icons/attention.svg) 95% center no-repeat;
   border: 2px solid #FF7979;
+}
+.container .signup-content form input:focus:invalid + .error {
+  display: block;
+}
+.container .signup-content form input:focus:valid {
+  background: url(./assets/icons/Flat_tick_icon.svg.png) 95% center no-repeat;
+  background-size: 24px 24px;
+  border: 2px solid springgreen;
 }
 .container .signup-content form input[type=text] {
   text-transform: capitalize;
@@ -302,20 +271,16 @@ a {
   text-transform: uppercase;
   color: #FFFFFF;
   background: #38CC8B;
-  -webkit-box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
-          box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
+  box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
 }
 .container .signup-content form button:hover {
   background-color: #77E2B3;
 }
 .container .signup-content form button:active {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transform: translateY(4px);
-      -ms-transform: translateY(4px);
-          transform: translateY(4px);
+  box-shadow: none;
+  transform: translateY(4px);
 }
-.container .signup-content form p {
+.container .signup-content form p.sigunup-content__btnnote {
   font-size: 11px;
   font-weight: 500;
   line-height: 26px;
@@ -323,7 +288,7 @@ a {
   color: #BAB7D4;
   text-align: center;
 }
-.container .signup-content form p span {
+.container .signup-content form p.sigunup-content__btnnote span {
   font-weight: 700;
   color: #FF7979;
-}
+}/*# sourceMappingURL=styles.css.map */
